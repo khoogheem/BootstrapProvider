@@ -237,6 +237,17 @@ extension Provider {
         renderer.stem.register(AlertTag(color: .info))
         renderer.stem.register(AlertTag(color: .light))
         renderer.stem.register(AlertTag(color: .dark))
+        ///
+        /// Alerts Dismissable
+        ///
+        renderer.stem.register(AlertTag(color: .primary, dismiss: true))
+        renderer.stem.register(AlertTag(color: .secondary, dismiss: true))
+        renderer.stem.register(AlertTag(color: .success, dismiss: true))
+        renderer.stem.register(AlertTag(color: .danger, dismiss: true))
+        renderer.stem.register(AlertTag(color: .warning, dismiss: true))
+        renderer.stem.register(AlertTag(color: .info, dismiss: true))
+        renderer.stem.register(AlertTag(color: .light, dismiss: true))
+        renderer.stem.register(AlertTag(color: .dark, dismiss: true))
     }
 }
 

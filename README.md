@@ -225,8 +225,37 @@ Alert
 #alert:dark(){
     This is a dark alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
 }
+```
+
+Alert Dismissable
+```
+#alert:dismiss:primary(){
+    This is a primary alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dismiss:secondary(){
+    This is a secondary alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dismiss:success(){
+    This is a success alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dismiss:danger(){
+    This is a danger alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dismiss:warning(){
+    This is a warning alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dismiss:info(){
+    This is a info alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dismiss:light(){
+    This is a light alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dismiss:dark(){
+    This is a dark alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
 
 ```
+
 
 
 

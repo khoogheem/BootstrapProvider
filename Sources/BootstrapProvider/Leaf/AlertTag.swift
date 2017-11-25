@@ -32,12 +32,18 @@ class AlertTag: Tag {
     }
 
     public let color: BootstrapColor
+    public let dismissable: Bool
     public let name: String
 
-    public init(color: BootstrapColor) {
+    public init(color: BootstrapColor, dismiss: Bool = false) {
         self.color = color
-
-        self.name = "alert:\(color)"
+        self.dismissable = dismiss
+        
+        if dismiss == false {
+            self.name = "alert:\(color)"
+        } else {
+            self.name = "alert:dismiss:\(color)"
+        }
     }
 
     public func render(stem: Stem, context: LeafContext, value: Node?, leaf: Leaf) throws -> Bytes {
@@ -59,12 +65,33 @@ class AlertTag: Tag {
             throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)()")
         }
 
-        let html = """
-        <div class="alert alert-\(color)" role="alert">
-
-        """
+        let html = text()
 
         return .bytes(html.makeBytes())
     }
+
+    private func text() -> String {
+
+        var html = """
+        <div class="alert alert-\(color)"
+        """
+
+        if dismissable == false {
+            html += """
+            role="alert">
+
+            """
+        } else {
+            html += """
+            alert-dismissible fade show role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            """    }
+
+        return html
+    }
+
 }
 
