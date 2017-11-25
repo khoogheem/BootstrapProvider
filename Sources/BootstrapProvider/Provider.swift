@@ -21,6 +21,91 @@ public final class Provider: Vapor.Provider {
             return
         }
 
+        addButtons(renderer: renderer)
+
+        ///
+        /// Link Button Standard Size
+        ///
+        renderer.stem.register(LinkButton(size: .standard, color: .primary))
+        renderer.stem.register(LinkButton(size: .standard, color: .secondary))
+        renderer.stem.register(LinkButton(size: .standard, color: .success))
+        renderer.stem.register(LinkButton(size: .standard, color: .danger))
+        renderer.stem.register(LinkButton(size: .standard, color: .warning))
+        renderer.stem.register(LinkButton(size: .standard, color: .info))
+        renderer.stem.register(LinkButton(size: .standard, color: .light))
+        renderer.stem.register(LinkButton(size: .standard, color: .dark))
+        ///
+        /// Link Button Large Size
+        ///
+        renderer.stem.register(LinkButton(size: .large, color: .primary))
+        renderer.stem.register(LinkButton(size: .large, color: .secondary))
+        renderer.stem.register(LinkButton(size: .large, color: .success))
+        renderer.stem.register(LinkButton(size: .large, color: .danger))
+        renderer.stem.register(LinkButton(size: .large, color: .warning))
+        renderer.stem.register(LinkButton(size: .large, color: .info))
+        renderer.stem.register(LinkButton(size: .large, color: .light))
+        renderer.stem.register(LinkButton(size: .large, color: .dark))
+        ///
+        /// Link Button Small Size
+        ///
+        renderer.stem.register(LinkButton(size: .small, color: .primary))
+        renderer.stem.register(LinkButton(size: .small, color: .secondary))
+        renderer.stem.register(LinkButton(size: .small, color: .success))
+        renderer.stem.register(LinkButton(size: .small, color: .danger))
+        renderer.stem.register(LinkButton(size: .small, color: .warning))
+        renderer.stem.register(LinkButton(size: .small, color: .info))
+        renderer.stem.register(LinkButton(size: .small, color: .light))
+        renderer.stem.register(LinkButton(size: .small, color: .dark))
+        ///
+        /// Link Button Outline Standard Size
+        ///
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .primary))
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .secondary))
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .success))
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .danger))
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .warning))
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .info))
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .light))
+        renderer.stem.register(LinkOutlineButton(size: .standard, color: .dark))
+        ///
+        /// Link Button Outline Large Size
+        ///
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .primary))
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .secondary))
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .success))
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .danger))
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .warning))
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .info))
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .light))
+        renderer.stem.register(LinkOutlineButton(size: .large, color: .dark))
+        ///
+        /// Link Button Outline Small Size
+        ///
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .primary))
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .secondary))
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .success))
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .danger))
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .warning))
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .info))
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .light))
+        renderer.stem.register(LinkOutlineButton(size: .small, color: .dark))
+
+
+    }
+
+    public func beforeRun(_ droplet: Droplet) throws {
+    }
+
+    public init(config: Config) throws {
+    }
+
+}
+
+// MARK: - Buttons
+extension Provider {
+
+    private func addButtons(renderer: LeafRenderer) {
+
         ///
         /// Buttons Standard Size
         ///
@@ -91,46 +176,5 @@ public final class Provider: Vapor.Provider {
         renderer.stem.register(ButtonOutline(size: .small, color: .light))
         renderer.stem.register(ButtonOutline(size: .small, color: .dark))
 
-        ///
-        /// Link Button Standard Size
-        ///
-        renderer.stem.register(LinkButton(size: .standard, color: .primary))
-        renderer.stem.register(LinkButton(size: .standard, color: .secondary))
-        renderer.stem.register(LinkButton(size: .standard, color: .success))
-        renderer.stem.register(LinkButton(size: .standard, color: .danger))
-        renderer.stem.register(LinkButton(size: .standard, color: .warning))
-        renderer.stem.register(LinkButton(size: .standard, color: .info))
-        renderer.stem.register(LinkButton(size: .standard, color: .light))
-        renderer.stem.register(LinkButton(size: .standard, color: .dark))
-        ///
-        /// Link Button Large Size
-        ///
-        renderer.stem.register(LinkButton(size: .large, color: .primary))
-        renderer.stem.register(LinkButton(size: .large, color: .secondary))
-        renderer.stem.register(LinkButton(size: .large, color: .success))
-        renderer.stem.register(LinkButton(size: .large, color: .danger))
-        renderer.stem.register(LinkButton(size: .large, color: .warning))
-        renderer.stem.register(LinkButton(size: .large, color: .info))
-        renderer.stem.register(LinkButton(size: .large, color: .light))
-        renderer.stem.register(LinkButton(size: .large, color: .dark))
-        ///
-        /// Link Button Small Size
-        ///
-        renderer.stem.register(LinkButton(size: .small, color: .primary))
-        renderer.stem.register(LinkButton(size: .small, color: .secondary))
-        renderer.stem.register(LinkButton(size: .small, color: .success))
-        renderer.stem.register(LinkButton(size: .small, color: .danger))
-        renderer.stem.register(LinkButton(size: .small, color: .warning))
-        renderer.stem.register(LinkButton(size: .small, color: .info))
-        renderer.stem.register(LinkButton(size: .small, color: .light))
-        renderer.stem.register(LinkButton(size: .small, color: .dark))
-
     }
-
-    public func beforeRun(_ droplet: Droplet) throws {
-    }
-
-    public init(config: Config) throws {
-    }
-
 }

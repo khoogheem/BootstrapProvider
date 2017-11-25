@@ -72,10 +72,20 @@ internal func ButtonOutlineText(title: String, color: BootstrapColor, size: Butt
     return button
 }
 
-internal func LinkButtonText(title: String, href: String, color: BootstrapColor, size: ButtonSize) -> String {
-    let button = """
-    <a role="button" class="btn btn-\(color) \(size.stringValue)" href="\(href)">\(title)</a>
+internal func LinkButtonText(title: String, href: String, color: BootstrapColor, size: ButtonSize, outline: Bool = false) -> String {
+
+    var button = """
+    <a role="button" class="btn btn-
     """
+
+    if outline == false {
+        button += """
+        \(color) \(size.stringValue)" href="\(href)">\(title)</a>
+        """
+    } else {
+        button += """
+        outline-\(color) \(size.stringValue)" href="\(href)">\(title)</a>
+        """    }
 
     return button
 }
@@ -112,6 +122,40 @@ public final class LinkButton: BasicTag {
         return .bytes(button.makeBytes())
     }
 }
+
+/// Bootstrap Link as a Outline Button
+public final class LinkOutlineButton: BasicTag {
+    public enum Error: Swift.Error {
+        case invalidSyntax(String)
+    }
+
+    public let size: ButtonSize
+    public let color: BootstrapColor
+    public let name: String
+
+    public init(size: ButtonSize, color: BootstrapColor) {
+        self.size = size
+        self.color = color
+
+        if size == .standard {
+            self.name = "link_button:outline:\(color)"
+        } else {
+            self.name = "link_button:outline:\(size.linkValue):\(color)"
+        }
+    }
+
+    public func run(arguments: ArgumentList) throws -> Node? {
+        guard let title = arguments[0]?.string,
+            let link = arguments[1]?.string else {
+                throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(title, link)")
+        }
+
+        let button = LinkButtonText(title: title, href: link, color: color, size: size, outline: true)
+
+        return .bytes(button.makeBytes())
+    }
+}
+
 
 
 /// Bootstrap Button

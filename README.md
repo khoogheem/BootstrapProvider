@@ -152,4 +152,44 @@ Small Size
 #link_button:small:dark("Dark", "http://getbootstrap.com")
 ```
 
+###  Link Outline Button
+
+Link that is a  Outline Button.  Takes a Title and a link
+
+Standard Size
+```
+#link_button:outline:primary("Primary", "http://getbootstrap.com")
+#link_button:outline:secondary("Secondary", "http://getbootstrap.com")
+#link_button:outline:success("Success", "http://getbootstrap.com")
+#link_button:outline:danger("Danger", "http://getbootstrap.com")
+#link_button:outline:warning("Warning", "http://getbootstrap.com")
+#link_button:outline:info("Info", "http://getbootstrap.com")
+#link_button:outline:light("Light", "http://getbootstrap.com")
+#link_button:outline:dark("Dark", "http://getbootstrap.com")
+```
+
+Large Size
+```
+#link_button:outline:large:primary("Primary", "http://getbootstrap.com")
+#link_button:outline:large:secondary("Secondary", "http://getbootstrap.com")
+#link_button:outline:large:success("Success", "http://getbootstrap.com")
+#link_button:outline:large:danger("Danger", "http://getbootstrap.com")
+#link_button:outline:large:warning("Warning", "http://getbootstrap.com")
+#link_button:outline:large:info("Info", "http://getbootstrap.com")
+#link_button:outline:large:light("Light", "http://getbootstrap.com")
+#link_button:outline:large:dark("Dark", "http://getbootstrap.com")
+```
+
+Small Size
+```
+#link_button:outline:small:primary("Primary", "http://getbootstrap.com")
+#link_button:outline:small:secondary("Secondary", "http://getbootstrap.com")
+#link_button:outline:small:success("Success", "http://getbootstrap.com")
+#link_button:outline:small:danger("Danger", "http://getbootstrap.com")
+#link_button:outline:small:warning("Warning", "http://getbootstrap.com")
+#link_button:outline:small:info("Info", "http://getbootstrap.com")
+#link_button:outline:small:light("Light", "http://getbootstrap.com")
+#link_button:outline:small:dark("Dark", "http://getbootstrap.com")
+```
+
 
