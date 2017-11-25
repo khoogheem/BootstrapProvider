@@ -60,16 +60,17 @@ class Badge: BasicTag {
     private func text(title: String) -> String {
 
         var html = """
-        <span class="badge badge-\(color) "
+        <span class="badge badge-\(color)"
         """
 
         if isPill == false {
             html += """
-            >\(title)</span>
+            ">\(title)</span>
             """
         } else {
+            html += " "
             html += """
-            badge-pill>\(title)</span>
+            badge-pill">\(title)</span>
             """    }
 
         return html
