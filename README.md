@@ -49,7 +49,7 @@ try addProvider(BootstrapProvider.Provider.self)
 #button:link("Link")
 ```
 
-Large Size
+**Large Size**
 ```
 #button:large:primary("Primary")
 #button:large:secondary("Secondary")
@@ -62,7 +62,7 @@ Large Size
 #button:large:link("Link")
 ```
 
-Small Size
+**Small Size**
 ```
 #button:small:primary("Primary")
 #button:small:secondary("Secondary")
@@ -77,7 +77,7 @@ Small Size
 
 ### Button Outline
 
-Standard Size
+**Standard Size**
 ```
 #button:outline:primary("Primary")
 #button:outline:secondary("Secondary")
@@ -89,7 +89,7 @@ Standard Size
 #button:outline:dark("Dark")
 ```
 
-Large Size
+**Large Size**
 ```
 #button:outline:large:primary("Primary")
 #button:outline:large:secondary("Secondary")
@@ -101,7 +101,7 @@ Large Size
 #button:outline:large:dark("Dark")
 ```
 
-Small Size
+**Small Size**
 ```
 #button:outline:small:primary("Primary")
 #button:outline:small:secondary("Secondary")
@@ -117,9 +117,9 @@ Small Size
 
 Link that is a Button.  Takes a Title and a link
 
-Standard Size
+**Standard Size**
 
-usage: #link:button:<color>(Title, Link)
+*usage:* #link:button:<color>(Title, Link)
 ```
 #link:button:primary("Primary", "http://getbootstrap.com")
 #link:button:secondary("Secondary", "http://getbootstrap.com")
@@ -131,9 +131,9 @@ usage: #link:button:<color>(Title, Link)
 #link:button:dark("Dark", "http://getbootstrap.com")
 ```
 
-Large Size
+**Large Size**
 
-usage: #link:button:large:<color>(Title, Link)
+*usage:* #link:button:large:<color>(Title, Link)
 ```
 #link:button:large:primary("Primary", "http://getbootstrap.com")
 #link:button:large:secondary("Secondary", "http://getbootstrap.com")
@@ -145,9 +145,9 @@ usage: #link:button:large:<color>(Title, Link)
 #link:button:large:dark("Dark", "http://getbootstrap.com")
 ```
 
-Small Size
+**Small Size**
 
-usage: #link:button:small:<color>(Title, Link)
+*usage:* #link:button:small:<color>(Title, Link)
 ```
 #link:button:small:primary("Primary", "http://getbootstrap.com")
 #link:button:small:secondary("Secondary", "http://getbootstrap.com")
@@ -163,9 +163,9 @@ usage: #link:button:small:<color>(Title, Link)
 
 Link that is a  Outline Button.  Takes a Title and a link
 
-Standard Size
+**Standard Size**
 
-usage: #link:button:outline:<color>(Title, Link)
+*usage:* #link:button:outline:<color>(Title, Link)
 ```
 #link:button:outline:primary("Primary", "http://getbootstrap.com")
 #link:button:outline:secondary("Secondary", "http://getbootstrap.com")
@@ -177,9 +177,9 @@ usage: #link:button:outline:<color>(Title, Link)
 #link:button:outline:dark("Dark", "http://getbootstrap.com")
 ```
 
-Large Size
+**Large Size**
 
-usage: #link:button:outline:large:<color>(Title, Link)
+*usage:* #link:button:outline:large:<color>(Title, Link)
 ```
 #link:button:outline:large:primary("Primary", "http://getbootstrap.com")
 #link:button:outline:large:secondary("Secondary", "http://getbootstrap.com")
@@ -191,9 +191,9 @@ usage: #link:button:outline:large:<color>(Title, Link)
 #link:button:outline:large:dark("Dark", "http://getbootstrap.com")
 ```
 
-Small Size
+**Small Size**
 
-usage: #link:button:outline:small:<color>(Title, Link)
+*usage:* #link:button:outline:small:<color>(Title, Link)
 ```
 #link:button:outline:small:primary("Primary", "http://getbootstrap.com")
 #link:button:outline:small:secondary("Secondary", "http://getbootstrap.com")
@@ -207,16 +207,16 @@ usage: #link:button:outline:small:<color>(Title, Link)
 
 ###  Alerts
 
-Alert Link
+**Alert Link**
 
-usage: #link:alert(Title, Link)
+*usage:* #link:alert(Title, Link)
 ```
 #link:alert("Get Bootstrap", "http://getbootstrap.com")
 ```
 
-Alert
+**Alert**
 
-usage: #alert:<color>() {
+*usage:* #alert:<color>() {
     Body text
 }
 ```
@@ -246,9 +246,9 @@ usage: #alert:<color>() {
 }
 ```
 
-Alert Dismissable
+**Alert Dismissable**
 
-usage: #alert:dismiss:<color>() {
+*usage:* #alert:dismiss:<color>() {
     Body text
 }
 ```
@@ -281,9 +281,9 @@ usage: #alert:dismiss:<color>() {
 
 ###  Badge
 
-Standard Badge
+**Standard Badge**
 
-usage: #badge:<color>(Title)
+*usage:* #badge:<color>(Title)
 ```
 #badge:primary("Primary")
 #badge:secondary("Secondary")
@@ -295,9 +295,9 @@ usage: #badge:<color>(Title)
 #badge:dark("Dark")
 ```
 
-Pill Badge
+**Pill Badge**
 
-usage: #badge:`pill`:<color>(Title)
+*usage:* #badge:`pill`:<color>(Title)
 ```
 #badge:pill:primary("Primary")
 #badge:pill:secondary("Secondary")
@@ -309,9 +309,9 @@ usage: #badge:`pill`:<color>(Title)
 #badge:pill:dark("Dark")
 ```
 
-Standard Badge Link
+**Standard Badge Link**
 
-usage: #link:badge:<color>(Title, Link)
+*usage:* #link:badge:<color>(Title, Link)
 ```
 #link:badge:primary("Primary", "#")
 #link:badge:secondary("Secondary", "#")
@@ -323,9 +323,9 @@ usage: #link:badge:<color>(Title, Link)
 #link:badge:dark("Dark", "#")
 ```
 
-Pill Badge Link
+**Pill Badge Link**
 
-usage: #link:badge:`pill`:<color>(Title, Link)
+*usage:* #link:badge:`pill`:<color>(Title, Link)
 ```
 #link:badge:pill:primary("Primary", "#")
 #link:badge:pill:secondary("Secondary", "#")
