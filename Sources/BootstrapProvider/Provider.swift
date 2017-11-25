@@ -56,6 +56,8 @@ public final class Provider: Vapor.Provider {
         addLinkButtons(renderer)
         /// Link Alert
         renderer.stem.register(LinkAlert())
+        /// Alerts
+        addAlerts(renderer)
 
     }
 
@@ -218,4 +220,25 @@ extension Provider {
         renderer.stem.register(LinkOutlineButton(size: .small, color: .dark))
     }
 }
+
+// MARK: - Alerts
+extension Provider {
+
+    private func addAlerts(_ renderer: LeafRenderer) {
+
+        ///
+        /// Alerts
+        ///
+        renderer.stem.register(AlertTag(color: .primary))
+        renderer.stem.register(AlertTag(color: .secondary))
+        renderer.stem.register(AlertTag(color: .success))
+        renderer.stem.register(AlertTag(color: .danger))
+        renderer.stem.register(AlertTag(color: .warning))
+        renderer.stem.register(AlertTag(color: .info))
+        renderer.stem.register(AlertTag(color: .light))
+        renderer.stem.register(AlertTag(color: .dark))
+    }
+}
+
+
 

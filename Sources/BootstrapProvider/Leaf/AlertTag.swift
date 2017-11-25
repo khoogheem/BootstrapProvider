@@ -1,5 +1,5 @@
 //
-//  Alert.swift
+//  AlertTag.swift
 //  BootstrapProvider
 //
 //  Created by Kevin Hoogheem on 11/25/17.
@@ -24,4 +24,47 @@
 
 import Leaf
 import Vapor
+
+class AlertTag: Tag {
+
+    public enum Error: Swift.Error {
+        case invalidSyntax(String)
+    }
+
+    public let color: BootstrapColor
+    public let name: String
+
+    public init(color: BootstrapColor) {
+        self.color = color
+
+        self.name = "alert:\(color)"
+    }
+
+    public func render(stem: Stem, context: LeafContext, value: Node?, leaf: Leaf) throws -> Bytes {
+        guard var body = value?.bytes else {
+            throw Abort.serverError
+        }
+
+        try body.append(contentsOf: stem.render(leaf, with: context))
+        body.append(contentsOf: """
+
+        </div>
+
+        """.makeBytes())
+        return body
+    }
+
+    func run(tagTemplate: TagTemplate, arguments: ArgumentList) throws -> Node? {
+        guard arguments.count == 0 else {
+            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)()")
+        }
+
+        let html = """
+        <div class="alert alert-\(color)" role="alert">
+
+        """
+
+        return .bytes(html.makeBytes())
+    }
+}
 

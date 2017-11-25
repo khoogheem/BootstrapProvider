@@ -199,6 +199,36 @@ Alert Link
 #link:alert("Get Bootstrap", "http://getbootstrap.com")
 ```
 
+Alert
+```
+#alert:primary(){
+    This is a primary alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:secondary(){
+    This is a secondary alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:success(){
+    This is a success alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:danger(){
+    This is a danger alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:warning(){
+    This is a warning alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:info(){
+    This is a info alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:light(){
+    This is a light alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+#alert:dark(){
+    This is a dark alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
+}
+
+```
+
+
 
 ## License
 
