@@ -8,198 +8,198 @@
 import Leaf
 import Vapor
 
-/// Bootstrap Button
-public final class ButtonPrimary: BasicTag {
+/// Bootstrap Button Large
+public final class ButtonLargePrimary: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
     
     public init() {}
-    public let name = "button:primary"
+    public let name = "button:large:primary"
     
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:primary parse error: expected button:primary(title)")
+            throw Error.invalidSyntax("button:large:primary parse error: expected button:large:primary(title)")
         }
 
         let button = """
-            <button type="button" class="btn btn-primary">\(title)</button>
+            <button type="button" class="btn btn-primary btn-lg">\(title)</button>
             """
         
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Secondary Button
-public final class ButtonSecondary: BasicTag {
+/// Bootstrap Secondary Button Large
+public final class ButtonLargeSecondary: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:secondary"
+    public let name = "button:large:secondary"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:secondary parse error: expected button:secondary(title)")
+            throw Error.invalidSyntax("button:large:secondary parse error: expected button:large:secondary(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-secondary">\(title)</button>
+        <button type="button" class="btn btn-secondary btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Success Button
-public final class ButtonSuccess: BasicTag {
+/// Bootstrap Success Button Large
+public final class ButtonLargeSuccess: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:success"
+    public let name = "button:large:success"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:success parse error: expected button:success(title)")
+            throw Error.invalidSyntax("button:large:success parse error: expected button:large:success(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-success">\(title)</button>
+        <button type="button" class="btn btn-success btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Danger Button
-public final class ButtonDanger: BasicTag {
+/// Bootstrap Danger Button Large
+public final class ButtonLargeDanger: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:danger"
+    public let name = "button:large:danger"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:danger parse error: expected button:danger(title)")
+            throw Error.invalidSyntax("button:large:danger parse error: expected button:large:danger(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-danger">\(title)</button>
+        <button type="button" class="btn btn-danger btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Warning Button
-public final class ButtonWarning: BasicTag {
+/// Bootstrap Warning Button Large
+public final class ButtonLargeWarning: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:warning"
+    public let name = "button:large:warning"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:warning parse error: expected button:warning(title)")
+            throw Error.invalidSyntax("button:large:warning parse error: expected button:large:warning(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-warning">\(title)</button>
+        <button type="button" class="btn btn-warning btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Info Button
-public final class ButtonInfo: BasicTag {
+/// Bootstrap Info Button Large
+public final class ButtonLargeInfo: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:info"
+    public let name = "button:large:info"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:info parse error: expected button:info(title)")
+            throw Error.invalidSyntax("button:large:info parse error: expected button:large:info(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-info">\(title)</button>
+        <button type="button" class="btn btn-info btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Light Button
-public final class ButtonLight: BasicTag {
+/// Bootstrap Light Button Large
+public final class ButtonLargeLight: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:light"
+    public let name = "button:large:light"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:light parse error: expected button:light(title)")
+            throw Error.invalidSyntax("button:large:light parse error: expected button:large:light(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-light">\(title)</button>
+        <button type="button" class="btn btn-light btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Dark Button
-public final class ButtonDark: BasicTag {
+/// Bootstrap Dark Button Large
+public final class ButtonLargeDark: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:dark"
+    public let name = "button:large:dark"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:dark parse error: expected button:dark(title)")
+            throw Error.invalidSyntax("button:large:dark parse error: expected button:large:dark(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-dark">\(title)</button>
+        <button type="button" class="btn btn-dark btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
     }
 }
 
-/// Bootstrap Link Button
-public final class ButtonLink: BasicTag {
+/// Bootstrap Link Button Large
+public final class ButtonLargeLink: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public init() {}
-    public let name = "button:link"
+    public let name = "button:large:link"
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:link parse error: expected button:link(title)")
+            throw Error.invalidSyntax("button:large:link parse error: expected button:large:link(title)")
         }
 
         let button = """
-        <button type="button" class="btn btn-link">\(title)</button>
+        <button type="button" class="btn btn-link btn-lg">\(title)</button>
         """
 
         return .bytes(button.makeBytes())
