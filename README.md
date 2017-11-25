@@ -118,38 +118,38 @@ Link that is a Button.  Takes a Title and a link
 
 Standard Size
 ```
-#link_button:primary("Primary", "http://getbootstrap.com")
-#link_button:secondary("Secondary", "http://getbootstrap.com")
-#link_button:success("Success", "http://getbootstrap.com")
-#link_button:danger("Danger", "http://getbootstrap.com")
-#link_button:warning("Warning", "http://getbootstrap.com")
-#link_button:info("Info", "http://getbootstrap.com")
-#link_button:light("Light", "http://getbootstrap.com")
-#link_button:dark("Dark", "http://getbootstrap.com")
+#link:button:primary("Primary", "http://getbootstrap.com")
+#link:button:secondary("Secondary", "http://getbootstrap.com")
+#link:button:success("Success", "http://getbootstrap.com")
+#link:button:danger("Danger", "http://getbootstrap.com")
+#link:button:warning("Warning", "http://getbootstrap.com")
+#link:button:info("Info", "http://getbootstrap.com")
+#link:button:light("Light", "http://getbootstrap.com")
+#link:button:dark("Dark", "http://getbootstrap.com")
 ```
 
 Large Size
 ```
-#link_button:large:primary("Primary", "http://getbootstrap.com")
-#link_button:large:secondary("Secondary", "http://getbootstrap.com")
-#link_button:large:success("Success", "http://getbootstrap.com")
-#link_button:large:danger("Danger", "http://getbootstrap.com")
-#link_button:large:warning("Warning", "http://getbootstrap.com")
-#link_button:large:info("Info", "http://getbootstrap.com")
-#link_button:large:light("Light", "http://getbootstrap.com")
-#link_button:large:dark("Dark", "http://getbootstrap.com")
+#link:button:large:primary("Primary", "http://getbootstrap.com")
+#link:button:large:secondary("Secondary", "http://getbootstrap.com")
+#link:button:large:success("Success", "http://getbootstrap.com")
+#link:button:large:danger("Danger", "http://getbootstrap.com")
+#link:button:large:warning("Warning", "http://getbootstrap.com")
+#link:button:large:info("Info", "http://getbootstrap.com")
+#link:button:large:light("Light", "http://getbootstrap.com")
+#link:button:large:dark("Dark", "http://getbootstrap.com")
 ```
 
 Small Size
 ```
-#link_button:small:primary("Primary", "http://getbootstrap.com")
-#link_button:small:secondary("Secondary", "http://getbootstrap.com")
-#link_button:small:success("Success", "http://getbootstrap.com")
-#link_button:small:danger("Danger", "http://getbootstrap.com")
-#link_button:small:warning("Warning", "http://getbootstrap.com")
-#link_button:small:info("Info", "http://getbootstrap.com")
-#link_button:small:light("Light", "http://getbootstrap.com")
-#link_button:small:dark("Dark", "http://getbootstrap.com")
+#link:button:small:primary("Primary", "http://getbootstrap.com")
+#link:button:small:secondary("Secondary", "http://getbootstrap.com")
+#link:button:small:success("Success", "http://getbootstrap.com")
+#link:button:small:danger("Danger", "http://getbootstrap.com")
+#link:button:small:warning("Warning", "http://getbootstrap.com")
+#link:button:small:info("Info", "http://getbootstrap.com")
+#link:button:small:light("Light", "http://getbootstrap.com")
+#link:button:small:dark("Dark", "http://getbootstrap.com")
 ```
 
 ###  Link Outline Button
@@ -158,38 +158,49 @@ Link that is a  Outline Button.  Takes a Title and a link
 
 Standard Size
 ```
-#link_button:outline:primary("Primary", "http://getbootstrap.com")
-#link_button:outline:secondary("Secondary", "http://getbootstrap.com")
-#link_button:outline:success("Success", "http://getbootstrap.com")
-#link_button:outline:danger("Danger", "http://getbootstrap.com")
-#link_button:outline:warning("Warning", "http://getbootstrap.com")
-#link_button:outline:info("Info", "http://getbootstrap.com")
-#link_button:outline:light("Light", "http://getbootstrap.com")
-#link_button:outline:dark("Dark", "http://getbootstrap.com")
+#link:button:outline:primary("Primary", "http://getbootstrap.com")
+#link:button:outline:secondary("Secondary", "http://getbootstrap.com")
+#link:button:outline:success("Success", "http://getbootstrap.com")
+#link:button:outline:danger("Danger", "http://getbootstrap.com")
+#link:button:outline:warning("Warning", "http://getbootstrap.com")
+#link:button:outline:info("Info", "http://getbootstrap.com")
+#link:button:outline:light("Light", "http://getbootstrap.com")
+#link:button:outline:dark("Dark", "http://getbootstrap.com")
 ```
 
 Large Size
 ```
-#link_button:outline:large:primary("Primary", "http://getbootstrap.com")
-#link_button:outline:large:secondary("Secondary", "http://getbootstrap.com")
-#link_button:outline:large:success("Success", "http://getbootstrap.com")
-#link_button:outline:large:danger("Danger", "http://getbootstrap.com")
-#link_button:outline:large:warning("Warning", "http://getbootstrap.com")
-#link_button:outline:large:info("Info", "http://getbootstrap.com")
-#link_button:outline:large:light("Light", "http://getbootstrap.com")
-#link_button:outline:large:dark("Dark", "http://getbootstrap.com")
+#link:button:outline:large:primary("Primary", "http://getbootstrap.com")
+#link:button:outline:large:secondary("Secondary", "http://getbootstrap.com")
+#link:button:outline:large:success("Success", "http://getbootstrap.com")
+#link:button:outline:large:danger("Danger", "http://getbootstrap.com")
+#link:button:outline:large:warning("Warning", "http://getbootstrap.com")
+#link:button:outline:large:info("Info", "http://getbootstrap.com")
+#link:button:outline:large:light("Light", "http://getbootstrap.com")
+#link:button:outline:large:dark("Dark", "http://getbootstrap.com")
 ```
 
 Small Size
 ```
-#link_button:outline:small:primary("Primary", "http://getbootstrap.com")
-#link_button:outline:small:secondary("Secondary", "http://getbootstrap.com")
-#link_button:outline:small:success("Success", "http://getbootstrap.com")
-#link_button:outline:small:danger("Danger", "http://getbootstrap.com")
-#link_button:outline:small:warning("Warning", "http://getbootstrap.com")
-#link_button:outline:small:info("Info", "http://getbootstrap.com")
-#link_button:outline:small:light("Light", "http://getbootstrap.com")
-#link_button:outline:small:dark("Dark", "http://getbootstrap.com")
+#link:button:outline:small:primary("Primary", "http://getbootstrap.com")
+#link:button:outline:small:secondary("Secondary", "http://getbootstrap.com")
+#link:button:outline:small:success("Success", "http://getbootstrap.com")
+#link:button:outline:small:danger("Danger", "http://getbootstrap.com")
+#link:button:outline:small:warning("Warning", "http://getbootstrap.com")
+#link:button:outline:small:info("Info", "http://getbootstrap.com")
+#link:button:outline:small:light("Light", "http://getbootstrap.com")
+#link:button:outline:small:dark("Dark", "http://getbootstrap.com")
 ```
 
+###  Alerts
+
+Alert Link
+```
+#link:alert("Get Bootstrap", "http://getbootstrap.com")
+```
+
+
+## License
+
+BootstrapProvider is available under the MIT license. See the LICENSE file for more info.
 
