@@ -18,7 +18,7 @@ dependencies: [
 Swift4
 ```swift
 dependencies: [
-    .package(url: "https://github.com/khoogheem/BootstrapProvider", from: "0.1.0"),
+    .package(url: "https://github.com/khoogheem/BootstrapProvider", from: "0.3.0"),
 ]
 ```
 
@@ -117,6 +117,8 @@ Small Size
 Link that is a Button.  Takes a Title and a link
 
 Standard Size
+
+usage: #link:button:<color>(Title, Link)
 ```
 #link:button:primary("Primary", "http://getbootstrap.com")
 #link:button:secondary("Secondary", "http://getbootstrap.com")
@@ -129,6 +131,8 @@ Standard Size
 ```
 
 Large Size
+
+usage: #link:button:large:<color>(Title, Link)
 ```
 #link:button:large:primary("Primary", "http://getbootstrap.com")
 #link:button:large:secondary("Secondary", "http://getbootstrap.com")
@@ -141,6 +145,8 @@ Large Size
 ```
 
 Small Size
+
+usage: #link:button:small:<color>(Title, Link)
 ```
 #link:button:small:primary("Primary", "http://getbootstrap.com")
 #link:button:small:secondary("Secondary", "http://getbootstrap.com")
@@ -157,6 +163,8 @@ Small Size
 Link that is a  Outline Button.  Takes a Title and a link
 
 Standard Size
+
+usage: #link:button:outline:<color>(Title, Link)
 ```
 #link:button:outline:primary("Primary", "http://getbootstrap.com")
 #link:button:outline:secondary("Secondary", "http://getbootstrap.com")
@@ -169,6 +177,8 @@ Standard Size
 ```
 
 Large Size
+
+usage: #link:button:outline:large:<color>(Title, Link)
 ```
 #link:button:outline:large:primary("Primary", "http://getbootstrap.com")
 #link:button:outline:large:secondary("Secondary", "http://getbootstrap.com")
@@ -181,6 +191,8 @@ Large Size
 ```
 
 Small Size
+
+usage: #link:button:outline:small:<color>(Title, Link)
 ```
 #link:button:outline:small:primary("Primary", "http://getbootstrap.com")
 #link:button:outline:small:secondary("Secondary", "http://getbootstrap.com")
@@ -195,11 +207,17 @@ Small Size
 ###  Alerts
 
 Alert Link
+
+usage: #link:alert(Title, Link)
 ```
 #link:alert("Get Bootstrap", "http://getbootstrap.com")
 ```
 
 Alert
+
+usage: #alert:<color>() {
+    Body text
+}
 ```
 #alert:primary(){
     This is a primary alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
@@ -228,6 +246,10 @@ Alert
 ```
 
 Alert Dismissable
+
+usage: #alert:dismiss:<color>() {
+    Body text
+}
 ```
 #alert:dismiss:primary(){
     This is a primary alert with #link:alert("Get Vapor", "http://vapor.codes"). Give it a click if you like.
@@ -259,6 +281,8 @@ Alert Dismissable
 ###  Badge
 
 Standard Badge
+
+usage: #badge:<color>(Title)
 ```
 #badge:primary("Primary")
 #badge:secondary("Secondary")
@@ -271,6 +295,8 @@ Standard Badge
 ```
 
 Pill Badge
+
+usage: #badge:pill:<color>(Title)
 ```
 #badge:pill:primary("Primary")
 #badge:pill:secondary("Secondary")
@@ -282,8 +308,33 @@ Pill Badge
 #badge:pill:dark("Dark")
 ```
 
+Standard Badge Link
 
+usage: #link:badge:<color>(Title, Link)
+```
+#link:badge:primary("Primary", "#")
+#link:badge:secondary("Secondary", "#")
+#link:badge:success("Success", "#")
+#link:badge:danger("Danger", "#")
+#link:badge:warning("Warning", "#")
+#link:badge:info("Info", "#")
+#link:badge:light("Light", "#")
+#link:badge:dark("Dark", "#")
+```
 
+Pill Badge Link
+
+usage: #link:badge:pill:<color>(Title, Link)
+```
+#link:badge:pill:primary("Primary", "#")
+#link:badge:pill:secondary("Secondary", "#")
+#link:badge:pill:success("Success", "#")
+#link:badge:pill:danger("Danger", "#")
+#link:badge:pill:warning("Warning", "#")
+#link:badge:pill:info("Info", "#")
+#link:badge:pill:light("Light", "#")
+#link:badge:pill:dark("Dark", "#")
+```
 
 
 ## License

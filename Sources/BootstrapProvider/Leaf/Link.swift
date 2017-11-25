@@ -43,6 +43,58 @@ internal func LinkButtonText(title: String, href: String, color: BootstrapColor,
     return button
 }
 
+/// Bootstrap Badge Link
+public final class LinkBadge: BasicTag {
+    public enum Error: Swift.Error {
+        case invalidSyntax(String)
+    }
+
+    public let color: BootstrapColor
+    public let isPill: Bool
+    public let name: String
+
+    public init(color: BootstrapColor, pill: Bool = false) {
+        self.color = color
+        self.isPill = pill
+
+        if pill == false {
+            self.name = "link:badge:\(color)"
+        } else {
+            self.name = "link:badge:pill:\(color)"
+        }
+    }
+
+    public func run(arguments: ArgumentList) throws -> Node? {
+        guard let title = arguments[0]?.string,
+            let link = arguments[1]?.string else {
+                throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(title, link)")
+        }
+
+        let html = text(title: title, link: link)
+
+        return .bytes(html.makeBytes())
+    }
+
+    private func text(title: String, link: String) -> String {
+
+        var html = """
+        <a href="\(link)" class="badge badge-\(color)
+        """
+
+        if isPill == false {
+            html += """
+            ">\(title)</a>
+            """
+        } else {
+            html += " "
+            html += """
+            badge-pill">\(title)</a>
+            """    }
+
+        return html
+    }
+}
+
 /// Bootstrap Alert Link
 public final class LinkAlert: BasicTag {
     public enum Error: Swift.Error {
