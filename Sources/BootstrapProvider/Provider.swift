@@ -45,6 +45,18 @@ public final class Provider: Vapor.Provider {
         renderer.stem.register(ButtonLargeLight())
         renderer.stem.register(ButtonLargeDark())
         renderer.stem.register(ButtonLargeLink())
+        ///
+        /// Buttons Small Size
+        ///
+        renderer.stem.register(ButtonSmallPrimary())
+        renderer.stem.register(ButtonSmallSecondary())
+        renderer.stem.register(ButtonSmallSuccess())
+        renderer.stem.register(ButtonSmallDanger())
+        renderer.stem.register(ButtonSmallWarning())
+        renderer.stem.register(ButtonSmallInfo())
+        renderer.stem.register(ButtonSmallLight())
+        renderer.stem.register(ButtonSmallDark())
+        renderer.stem.register(ButtonSmallLink())
 
     }
 

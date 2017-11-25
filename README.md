@@ -47,3 +47,33 @@ try addProvider(BootstrapProvider.Provider.self)
 #button:dark("Dark")
 #button:link("Link")
 ```
+
+### Button - Large Size
+
+```
+#button:large:primary("Primary")
+#button:large:secondary("Secondary")
+#button:large:success("Success")
+#button:large:danger("Danger")
+#button:large:warning("Warning")
+#button:large:info("Info")
+#button:large:light("Light")
+#button:large:dark("Dark")
+#button:large:link("Link")
+```
+
+### Button - Small Size
+
+```
+#button:small:primary("Primary")
+#button:small:secondary("Secondary")
+#button:small:success("Success")
+#button:small:danger("Danger")
+#button:small:warning("Warning")
+#button:small:info("Info")
+#button:small:light("Light")
+#button:small:dark("Dark")
+#button:small:link("Link")
+```
+
+
