@@ -1,6 +1,7 @@
 # BootstrapProvider
 
 [![Swift3](https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![Vapor Version](https://img.shields.io/badge/Vapor-2-F6CBCA.svg)](http://vapor.codes)
 
 Vapor Provider for Bootstrap Leaf Tags.
 
