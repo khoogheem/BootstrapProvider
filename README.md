@@ -34,7 +34,7 @@ try addProvider(BootstrapProvider.Provider.self)
 
 ## Tags
 
-### Button - Standard Size
+### Button
 
 ```
 #button:primary("Primary")
@@ -48,8 +48,7 @@ try addProvider(BootstrapProvider.Provider.self)
 #button:link("Link")
 ```
 
-### Button - Large Size
-
+Large Size
 ```
 #button:large:primary("Primary")
 #button:large:secondary("Secondary")
@@ -62,8 +61,7 @@ try addProvider(BootstrapProvider.Provider.self)
 #button:large:link("Link")
 ```
 
-### Button - Small Size
-
+Small Size
 ```
 #button:small:primary("Primary")
 #button:small:secondary("Secondary")
@@ -74,6 +72,44 @@ try addProvider(BootstrapProvider.Provider.self)
 #button:small:light("Light")
 #button:small:dark("Dark")
 #button:small:link("Link")
+```
+
+### Button Outline
+
+Standard Size
+```
+#button:outline:primary("Primary")
+#button:outline:secondary("Secondary")
+#button:outline:success("Success")
+#button:outline:danger("Danger")
+#button:outline:warning("Warning")
+#button:outline:info("Info")
+#button:outline:light("Light")
+#button:outline:dark("Dark")
+```
+
+Large Size
+```
+#button:outline:large:primary("Primary")
+#button:outline:large:secondary("Secondary")
+#button:outline:large:success("Success")
+#button:outline:large:danger("Danger")
+#button:outline:large:warning("Warning")
+#button:outline:large:info("Info")
+#button:outline:large:light("Light")
+#button:outline:large:dark("Dark")
+```
+
+Small Size
+```
+#button:outline:small:primary("Primary")
+#button:outline:small:secondary("Secondary")
+#button:outline:small:success("Success")
+#button:outline:small:danger("Danger")
+#button:outline:small:warning("Warning")
+#button:outline:small:info("Info")
+#button:outline:small:light("Light")
+#button:outline:small:dark("Dark")
 ```
 
 

@@ -8,177 +8,98 @@
 import Leaf
 import Vapor
 
+public enum ButtonSize {
+    case standard
+    case large
+    case small
+
+    var stringValue: String {
+        switch self {
+        case .standard:
+            return ""
+        case .large:
+            return "btn-lg"
+        case .small:
+            return "btn-sm"
+        }
+    }
+
+    internal var linkValue: String {
+        switch self {
+        case .standard:
+            return ""
+        case .large:
+            return "large"
+        case .small:
+            return "small"
+        }
+    }
+}
+
+public enum BootstrapColor: String {
+    case primary
+    case secondary
+    case success
+    case danger
+    case warning
+    case info
+    case light
+    case dark
+}
+
+
+internal func ButtonText(title: String, color: BootstrapColor, size: ButtonSize) -> String {
+    let button = """
+    <button type="button" class="btn btn-\(color) \(size.stringValue)">\(title)</button>
+    """
+
+    return button
+}
+
+internal func ButtonLinkText(title: String, size: ButtonSize) -> String {
+    let button = """
+    <button type="button" class="btn btn-link \(size.stringValue)">\(title)</button>
+    """
+
+    return button
+}
+
+internal func ButtonOutlineText(title: String, color: BootstrapColor, size: ButtonSize) -> String {
+    let button = """
+    <button type="button" class="btn btn-outline-\(color) \(size.stringValue)">\(title)</button>
+    """
+
+    return button
+}
+
+
 /// Bootstrap Button
-public final class ButtonPrimary: BasicTag {
-    public enum Error: Swift.Error {
-        case invalidSyntax(String)
-    }
-    
-    public init() {}
-    public let name = "button:primary"
-    
-    public func run(arguments: ArgumentList) throws -> Node? {
-        guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:primary parse error: expected button:primary(title)")
-        }
-
-        let button = """
-            <button type="button" class="btn btn-primary">\(title)</button>
-            """
-        
-        return .bytes(button.makeBytes())
-    }
-}
-
-/// Bootstrap Secondary Button
-public final class ButtonSecondary: BasicTag {
+public final class Button: BasicTag {
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
-    public init() {}
-    public let name = "button:secondary"
+    public let size: ButtonSize
+    public let color: BootstrapColor
+    public let name: String
+
+    public init(size: ButtonSize, color: BootstrapColor) {
+        self.size = size
+        self.color = color
+
+        if size == .standard {
+            self.name = "button:\(color)"
+        } else {
+            self.name = "button:\(size.linkValue):\(color)"
+        }
+    }
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:secondary parse error: expected button:secondary(title)")
+            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(title)")
         }
 
-        let button = """
-        <button type="button" class="btn btn-secondary">\(title)</button>
-        """
-
-        return .bytes(button.makeBytes())
-    }
-}
-
-/// Bootstrap Success Button
-public final class ButtonSuccess: BasicTag {
-    public enum Error: Swift.Error {
-        case invalidSyntax(String)
-    }
-
-    public init() {}
-    public let name = "button:success"
-
-    public func run(arguments: ArgumentList) throws -> Node? {
-        guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:success parse error: expected button:success(title)")
-        }
-
-        let button = """
-        <button type="button" class="btn btn-success">\(title)</button>
-        """
-
-        return .bytes(button.makeBytes())
-    }
-}
-
-/// Bootstrap Danger Button
-public final class ButtonDanger: BasicTag {
-    public enum Error: Swift.Error {
-        case invalidSyntax(String)
-    }
-
-    public init() {}
-    public let name = "button:danger"
-
-    public func run(arguments: ArgumentList) throws -> Node? {
-        guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:danger parse error: expected button:danger(title)")
-        }
-
-        let button = """
-        <button type="button" class="btn btn-danger">\(title)</button>
-        """
-
-        return .bytes(button.makeBytes())
-    }
-}
-
-/// Bootstrap Warning Button
-public final class ButtonWarning: BasicTag {
-    public enum Error: Swift.Error {
-        case invalidSyntax(String)
-    }
-
-    public init() {}
-    public let name = "button:warning"
-
-    public func run(arguments: ArgumentList) throws -> Node? {
-        guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:warning parse error: expected button:warning(title)")
-        }
-
-        let button = """
-        <button type="button" class="btn btn-warning">\(title)</button>
-        """
-
-        return .bytes(button.makeBytes())
-    }
-}
-
-/// Bootstrap Info Button
-public final class ButtonInfo: BasicTag {
-    public enum Error: Swift.Error {
-        case invalidSyntax(String)
-    }
-
-    public init() {}
-    public let name = "button:info"
-
-    public func run(arguments: ArgumentList) throws -> Node? {
-        guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:info parse error: expected button:info(title)")
-        }
-
-        let button = """
-        <button type="button" class="btn btn-info">\(title)</button>
-        """
-
-        return .bytes(button.makeBytes())
-    }
-}
-
-/// Bootstrap Light Button
-public final class ButtonLight: BasicTag {
-    public enum Error: Swift.Error {
-        case invalidSyntax(String)
-    }
-
-    public init() {}
-    public let name = "button:light"
-
-    public func run(arguments: ArgumentList) throws -> Node? {
-        guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:light parse error: expected button:light(title)")
-        }
-
-        let button = """
-        <button type="button" class="btn btn-light">\(title)</button>
-        """
-
-        return .bytes(button.makeBytes())
-    }
-}
-
-/// Bootstrap Dark Button
-public final class ButtonDark: BasicTag {
-    public enum Error: Swift.Error {
-        case invalidSyntax(String)
-    }
-
-    public init() {}
-    public let name = "button:dark"
-
-    public func run(arguments: ArgumentList) throws -> Node? {
-        guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:dark parse error: expected button:dark(title)")
-        }
-
-        let button = """
-        <button type="button" class="btn btn-dark">\(title)</button>
-        """
+        let button = ButtonText(title: title, color: color, size: size)
 
         return .bytes(button.makeBytes())
     }
@@ -190,18 +111,59 @@ public final class ButtonLink: BasicTag {
         case invalidSyntax(String)
     }
 
-    public init() {}
-    public let name = "button:link"
+    public let size: ButtonSize
+    public let name: String
+
+    public init(size: ButtonSize) {
+        self.size = size
+
+        if size == .standard {
+            self.name = "button:link"
+        } else {
+            self.name = "button:\(size.linkValue):link"
+        }
+    }
 
     public func run(arguments: ArgumentList) throws -> Node? {
         guard let title = arguments[0]?.string else {
-            throw Error.invalidSyntax("button:link parse error: expected button:link(title)")
+            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(title)")
         }
 
-        let button = """
-        <button type="button" class="btn btn-link">\(title)</button>
-        """
+        let button = ButtonLinkText(title: title, size: size)
 
         return .bytes(button.makeBytes())
     }
 }
+
+/// Bootstrap Outline Button
+public final class ButtonOutline: BasicTag {
+    public enum Error: Swift.Error {
+        case invalidSyntax(String)
+    }
+
+    public let size: ButtonSize
+    public let color: BootstrapColor
+    public let name: String
+
+    public init(size: ButtonSize, color: BootstrapColor) {
+        self.size = size
+        self.color = color
+
+        if size == .standard {
+            self.name = "button:outline:\(color)"
+        } else {
+            self.name = "button:outline:\(size.linkValue):\(color)"
+        }
+    }
+
+    public func run(arguments: ArgumentList) throws -> Node? {
+        guard let title = arguments[0]?.string else {
+            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(title)")
+        }
+
+        let button = ButtonOutlineText(title: title, color: color, size: size)
+
+        return .bytes(button.makeBytes())
+    }
+}
+
