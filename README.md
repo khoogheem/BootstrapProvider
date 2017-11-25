@@ -296,7 +296,7 @@ usage: #badge:<color>(Title)
 
 Pill Badge
 
-usage: #badge:pill:<color>(Title)
+usage: #badge:`pill`:<color>(Title)
 ```
 #badge:pill:primary("Primary")
 #badge:pill:secondary("Secondary")
@@ -324,7 +324,7 @@ usage: #link:badge:<color>(Title, Link)
 
 Pill Badge Link
 
-usage: #link:badge:pill:<color>(Title, Link)
+usage: #link:badge:`pill`:<color>(Title, Link)
 ```
 #link:badge:pill:primary("Primary", "#")
 #link:badge:pill:secondary("Secondary", "#")
