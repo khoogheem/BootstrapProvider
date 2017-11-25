@@ -1,5 +1,5 @@
 //
-//  AlertTag.swift
+//  Badge.swift
 //  BootstrapProvider
 //
 //  Created by Kevin Hoogheem on 11/25/17.
@@ -25,71 +25,51 @@
 import Leaf
 import Vapor
 
-//<span class="badge badge-secondary">New</span>
-
-class AlertTag: Tag {
+/// Bootstrap Badge Tag
+class Badge: BasicTag {
 
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
     public let color: BootstrapColor
-    public let dismissable: Bool
+    public let isPill: Bool
     public let name: String
 
-    public init(color: BootstrapColor, dismiss: Bool = false) {
+    public init(color: BootstrapColor, pill: Bool = false) {
         self.color = color
-        self.dismissable = dismiss
-        
-        if dismiss == false {
-            self.name = "alert:\(color)"
+        self.isPill = pill
+
+        if pill == false {
+            self.name = "badge:\(color)"
         } else {
-            self.name = "alert:dismiss:\(color)"
+            self.name = "badge:pill:\(color)"
         }
     }
 
-    public func render(stem: Stem, context: LeafContext, value: Node?, leaf: Leaf) throws -> Bytes {
-        guard var body = value?.bytes else {
-            throw Abort.serverError
+    public func run(arguments: ArgumentList) throws -> Node? {
+        guard let title = arguments[0]?.string else {
+                throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(title)")
         }
 
-        try body.append(contentsOf: stem.render(leaf, with: context))
-        body.append(contentsOf: """
-
-        </div>
-
-        """.makeBytes())
-        return body
-    }
-
-    func run(tagTemplate: TagTemplate, arguments: ArgumentList) throws -> Node? {
-        guard arguments.count == 0 else {
-            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)()")
-        }
-
-        let html = text()
+        let html = text(title: title)
 
         return .bytes(html.makeBytes())
     }
 
-    private func text() -> String {
+    private func text(title: String) -> String {
 
         var html = """
-        <div class="alert alert-\(color)"
+        <span class="badge badge-\(color) "
         """
 
-        if dismissable == false {
+        if isPill == false {
             html += """
-            role="alert">
-
+            >\(title)</span>
             """
         } else {
             html += """
-            alert-dismissible fade show role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-
+            badge-pill>\(title)</span>
             """    }
 
         return html

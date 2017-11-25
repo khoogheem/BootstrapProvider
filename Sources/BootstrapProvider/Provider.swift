@@ -58,6 +58,8 @@ public final class Provider: Vapor.Provider {
         renderer.stem.register(LinkAlert())
         /// Alerts
         addAlerts(renderer)
+        /// Badges
+        addBadges(renderer)
 
     }
 
@@ -251,5 +253,32 @@ extension Provider {
     }
 }
 
+// MARK: - Badges
+extension Provider {
 
+    private func addBadges(_ renderer: LeafRenderer) {
 
+        ///
+        /// Alerts
+        ///
+        renderer.stem.register(Badge(color: .primary))
+        renderer.stem.register(Badge(color: .secondary))
+        renderer.stem.register(Badge(color: .success))
+        renderer.stem.register(Badge(color: .danger))
+        renderer.stem.register(Badge(color: .warning))
+        renderer.stem.register(Badge(color: .info))
+        renderer.stem.register(Badge(color: .light))
+        renderer.stem.register(Badge(color: .dark))
+        ///
+        /// Alerts Dismissable
+        ///
+        renderer.stem.register(Badge(color: .primary, pill: true))
+        renderer.stem.register(Badge(color: .secondary, pill: true))
+        renderer.stem.register(Badge(color: .success, pill: true))
+        renderer.stem.register(Badge(color: .danger, pill: true))
+        renderer.stem.register(Badge(color: .warning, pill: true))
+        renderer.stem.register(Badge(color: .info, pill: true))
+        renderer.stem.register(Badge(color: .light, pill: true))
+        renderer.stem.register(Badge(color: .dark, pill: true))
+    }
+}

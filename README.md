@@ -256,6 +256,33 @@ Alert Dismissable
 
 ```
 
+###  Badge
+
+Standard Badge
+```
+#badge:primary("Primary")
+#badge:secondary("Secondary")
+#badge:success("Success")
+#badge:danger("Danger")
+#badge:warning("Warning")
+#badge:info("Info")
+#badge:light("Light")
+#badge:dark("Dark")
+```
+
+Pill Badge
+```
+#badge:pill:primary("Primary")
+#badge:pill:secondary("Secondary")
+#badge:pill:success("Success")
+#badge:pill:danger("Danger")
+#badge:pill:warning("Warning")
+#badge:pill:info("Info")
+#badge:pill:light("Light")
+#badge:pill:dark("Dark")
+```
+
+
 
 
 
