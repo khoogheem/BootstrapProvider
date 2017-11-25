@@ -60,7 +60,7 @@ class Badge: BasicTag {
     private func text(title: String) -> String {
 
         var html = """
-        <span class="badge badge-\(color)"
+        <span class="badge badge-\(color)
         """
 
         if isPill == false {
