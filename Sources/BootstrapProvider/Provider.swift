@@ -66,8 +66,6 @@ public final class Provider: Vapor.Provider {
         addButtons(renderer)
         /// Add Link Buttons
         addLinkButtons(renderer)
-        /// Link Alert
-        renderer.stem.register(LinkAlert())
         /// Alerts
         addAlerts(renderer)
         /// Badges
@@ -152,8 +150,10 @@ extension Provider {
             renderer.stem.register(AlertTag(color: color))
             /// Add Alerts Dismissable
             renderer.stem.register(AlertTag(color: color, dismiss: true))
-
         }
+
+        /// Link Alert
+        renderer.stem.register(LinkAlert())
     }
 }
 
@@ -170,7 +170,10 @@ extension Provider {
             renderer.stem.register(Badge(color: color))
             /// Add Pill Badge
             renderer.stem.register(Badge(color: color, pill: true))
-
+            /// Add Link Badge
+            renderer.stem.register(LinkBadge(color: color))
+            /// Add Link Pill Badge
+            renderer.stem.register(LinkBadge(color: color, pill: true))
         }
     }
 }
