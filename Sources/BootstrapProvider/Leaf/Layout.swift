@@ -1,8 +1,8 @@
 //
-//  AlertTag.swift
+//  Layout.swift
 //  BootstrapProvider
 //
-//  Created by Kevin Hoogheem on 11/25/17.
+//  Created by Kevin Hoogheem on 11/26/17.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,26 +25,23 @@
 import Leaf
 import Vapor
 
-
-/// Bootstrap Alert Tag
-class AlertTag: Tag {
+/// Bootstrap Container Tag
+public final class Container: Tag {
 
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
-    public let color: BootstrapColor
-    public let dismissable: Bool
+    public let isFluid: Bool
     public let name: String
 
-    public init(color: BootstrapColor, dismiss: Bool = false) {
-        self.color = color
-        self.dismissable = dismiss
-        
-        if dismiss == false {
-            self.name = "alert:\(color)"
+    public init(fluid: Bool = false) {
+        self.isFluid = fluid
+
+        if fluid == true {
+            self.name = "container:fluid"
         } else {
-            self.name = "alert:dismiss:\(color)"
+            self.name = "container"
         }
     }
 
@@ -62,36 +59,25 @@ class AlertTag: Tag {
         return body
     }
 
-    func run(tagTemplate: TagTemplate, arguments: ArgumentList) throws -> Node? {
+    public func run(tagTemplate: TagTemplate, arguments: ArgumentList) throws -> Node? {
         guard arguments.count == 0 else {
             throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)()")
         }
 
-        let html = text()
-
-        return .bytes(html.makeBytes())
-    }
-
-    private func text() -> String {
-
         var html = """
-        <div class="alert alert-\(color)"
+        <div class="container
         """
 
-        if dismissable == false {
+        if isFluid == false {
             html += """
-            role="alert">
-
+            ">
             """
         } else {
             html += """
-            alert-dismissible fade show role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            -fluid">
+            """
+        }
 
-            """    }
-
-        return html
+        return .bytes(html.makeBytes())
     }
 }

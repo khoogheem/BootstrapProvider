@@ -61,6 +61,12 @@ public final class Provider: Vapor.Provider {
             print("BootstrapProvider only supports Leaf as a renderer")
             return
         }
+        ///
+        /// Layout
+        ///
+        renderer.stem.register(Container())
+        renderer.stem.register(Container(fluid: true))
+
 
         /// Add Standard Buttons
         addButtons(renderer)

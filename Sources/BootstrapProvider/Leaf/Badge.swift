@@ -71,7 +71,8 @@ class Badge: BasicTag {
             html += " "
             html += """
             badge-pill">\(title)</span>
-            """    }
+            """
+        }
 
         return html
     }

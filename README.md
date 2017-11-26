@@ -35,6 +35,30 @@ try addProvider(BootstrapProvider.Provider.self)
 
 ## Tags
 
+### Layout
+
+#### Containers
+
+**Standard**
+
+*usage:* #container() { }
+```
+#container() {
+    <h1>Container</h1>
+    #button:primary("Primary")
+}
+```
+
+**Fluid**
+
+*usage:* #container:fluid() { }
+```
+#container:fluid() {
+    <h1>Container</h1>
+    #button:primary("Primary")
+}
+```
+
 ### Button
 
 ```
