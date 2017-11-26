@@ -19,7 +19,7 @@ dependencies: [
 Swift4
 ```swift
 dependencies: [
-    .package(url: "https://github.com/khoogheem/BootstrapProvider", from: "0.4.2"),
+    .package(url: "https://github.com/khoogheem/BootstrapProvider", from: "0.5.0"),
 ]
 ```
 
