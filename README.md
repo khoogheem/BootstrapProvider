@@ -35,53 +35,21 @@ try addProvider(BootstrapProvider.Provider.self)
 
 ## Tags
 
-### Layout
+Tags are Documented in the [Wiki](https://github.com/khoogheem/BootstrapProvider/wiki)
 
-#### Containers
-
-**Standard**
-
-*usage:* #container() { }
+Example: 
 ```
 #container() {
-    <h1>Container</h1>
-    #button:primary("Primary")
+
+    #row("justify-content-md-center") {
+        <h1>Centered Text</h1>
+    }
+
+    #row() {
+        #button:primary("Primary")
+    }
 }
-```
 
-**Fluid**
-
-*usage:* #container:fluid() { }
-```
-#container:fluid() {
-    <h1>Container</h1>
-    #button:primary("Primary")
-}
-```
-
-#### Row
-
-*usage:* #row(<modifier>) { }
-
-*Modifiers*:
-- align-items-start
-- align-items-center
-- align-items-end
-- justify-content-start
-- justify-content-center
-- justify-content-end
-- justify-content-around
-- justify-content-between
-- no-gutters
-- justify-content-md-center
-
-```
-#row("justify-content-md-center") {
-    #button:primary("Primary")
-}
-#row() {
-    #button:primary("Primary")
-}
 ```
 
 
