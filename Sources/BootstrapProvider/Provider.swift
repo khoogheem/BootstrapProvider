@@ -116,6 +116,14 @@ extension Provider {
         /// Button Link Small Size
         renderer.stem.register(ButtonLink(size: .small))
 
+        /// Button Group
+        renderer.stem.register(ButtonGroup(size: .standard))
+        renderer.stem.register(ButtonGroup(size: .large))
+        renderer.stem.register(ButtonGroup(size: .small))
+        /// Vertical Button Group
+        renderer.stem.register(ButtonGroup(size: .standard, vertical: true))
+        renderer.stem.register(ButtonGroup(size: .large, vertical: true))
+        renderer.stem.register(ButtonGroup(size: .small, vertical: true))
     }
 }
 

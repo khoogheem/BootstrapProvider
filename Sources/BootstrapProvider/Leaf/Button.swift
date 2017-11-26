@@ -24,7 +24,9 @@
 
 import Leaf
 import Vapor
+import Foundation
 
+/// Button Sizes
 public enum ButtonSize {
     case standard
     case large
@@ -38,6 +40,35 @@ public enum ButtonSize {
             return "btn-lg"
         case .small:
             return "btn-sm"
+        }
+    }
+
+    internal var linkValue: String {
+        switch self {
+        case .standard:
+            return ""
+        case .large:
+            return "large"
+        case .small:
+            return "small"
+        }
+    }
+}
+
+/// Button Group
+public enum ButtonGroupSize {
+    case standard
+    case large
+    case small
+
+    var stringValue: String {
+        switch self {
+        case .standard:
+            return ""
+        case .large:
+            return "btn-group-lg"
+        case .small:
+            return "btn-group-sm"
         }
     }
 
@@ -78,6 +109,7 @@ internal func ButtonOutlineText(title: String, color: BootstrapColor, size: Butt
     return button
 }
 
+//MARK: - Buttons
 
 /// Bootstrap Button
 public final class Button: BasicTag {
@@ -173,3 +205,75 @@ public final class ButtonOutline: BasicTag {
     }
 }
 
+
+// MARK: - Button Group
+/// Bootstrap Button Group Tag
+public final class ButtonGroup: Tag {
+
+    public enum Error: Swift.Error {
+        case invalidSyntax(String)
+    }
+
+    public let size: ButtonGroupSize
+    public let isVertical: Bool
+    public let name: String
+
+    public init(size: ButtonGroupSize, vertical: Bool = false) {
+        self.size = size
+        self.isVertical = vertical
+
+        if vertical == false {
+            if size == .standard {
+                self.name = "button:group"
+            } else {
+                self.name = "button:group:\(size.linkValue)"
+            }
+
+        } else {
+            if size == .standard {
+                self.name = "button:group:vertical"
+            } else {
+                self.name = "button:group:vertical:\(size.linkValue)"
+            }
+        }
+    }
+
+    public func render(stem: Stem, context: LeafContext, value: Node?, leaf: Leaf) throws -> Bytes {
+        guard var body = value?.bytes else {
+            throw Abort.serverError
+        }
+
+        try body.append(contentsOf: stem.render(leaf, with: context))
+        body.append(contentsOf: """
+
+        </div>
+
+        """.makeBytes())
+        return body
+    }
+
+    public func run(tagTemplate: TagTemplate, arguments: ArgumentList) throws -> Node? {
+        guard arguments.count <= 1 else {
+            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(<aria-label>)")
+        }
+
+        let modifier = arguments[0]?.string ?? UUID().uuidString
+
+        var group: String = "btn-group"
+
+        if isVertical == true {
+            group = "btn-group-vertical"
+        }
+
+        if size != .standard {
+            group += " \(size.stringValue)"
+        }
+
+        let html = """
+        <div class="\(group)" role="group" aria-label="\(modifier)">
+
+        """
+
+        return .bytes(html.makeBytes())
+    }
+}

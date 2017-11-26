@@ -89,7 +89,8 @@ public final class LinkBadge: BasicTag {
             html += " "
             html += """
             badge-pill">\(title)</a>
-            """    }
+            """
+        }
 
         return html
     }
