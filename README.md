@@ -33,6 +33,15 @@ In your Config+Setup.swit file where you setup your providers you will need to a
 try addProvider(BootstrapProvider.Provider.self)
 ```
 
+If you don't want all of the Tags you can add your own in Droplet+Setup.swift:
+```
+if let leaf = self.view as? LeafRenderer {
+    leaf.stem.register(Button(size: .standard, color: .primary))
+    leaf.stem.register(Button(size: .large, color: .primary))
+    leaf.stem.register(Button(size: .standard, color: .dark))
+}
+```
+
 ## Tags
 
 Tags are Documented in the [Wiki](https://github.com/khoogheem/BootstrapProvider/wiki)
