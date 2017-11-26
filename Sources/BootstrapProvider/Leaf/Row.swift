@@ -1,9 +1,10 @@
 //
-//  Layout.swift
+//  Row.swift
 //  BootstrapProvider
 //
 //  Created by Kevin Hoogheem on 11/26/17.
 //
+
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
 //  in the Software without restriction, including without limitation the rights
@@ -25,24 +26,17 @@
 import Leaf
 import Vapor
 
-/// Bootstrap Container Tag
-public final class Container: Tag {
+/// Bootstrap Row Tag
+public final class Row: Tag {
 
     public enum Error: Swift.Error {
         case invalidSyntax(String)
     }
 
-    public let isFluid: Bool
     public let name: String
 
-    public init(fluid: Bool = false) {
-        self.isFluid = fluid
-
-        if fluid == true {
-            self.name = "container:fluid"
-        } else {
-            self.name = "container"
-        }
+    public init() {
+        self.name = "row"
     }
 
     public func render(stem: Stem, context: LeafContext, value: Node?, leaf: Leaf) throws -> Bytes {
@@ -60,23 +54,36 @@ public final class Container: Tag {
     }
 
     public func run(tagTemplate: TagTemplate, arguments: ArgumentList) throws -> Node? {
-        guard arguments.count == 0 else {
-            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)()")
+        guard arguments.count <= 1 else {
+            throw Error.invalidSyntax("\(self.name) parse error: expected \(self.name)(<modifier>)")
         }
 
         var html = """
-        <div class="container
+        <div class="row
         """
 
-        if isFluid == false {
+        //Modifiers:
+        //  align-items-start
+        //  align-items-center
+        //  align-items-end
+        //  align-items-end
+        //  justify-content-start
+        //  justify-content-center
+        //  justify-content-end
+        //  justify-content-around
+        //  justify-content-between
+        //  no-gutters
+        //  justify-content-md-center
+
+        if let modifier = arguments[0]?.string {
             html += """
-            ">
+             \(modifier)">
 
             """
         } else {
             html += """
-            -fluid">
-            
+            ">
+
             """
         }
 

@@ -66,6 +66,7 @@ public final class Provider: Vapor.Provider {
         ///
         renderer.stem.register(Container())
         renderer.stem.register(Container(fluid: true))
+        renderer.stem.register(Row())
 
 
         /// Add Standard Buttons
