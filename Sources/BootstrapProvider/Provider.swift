@@ -103,6 +103,14 @@ extension Provider {
             /// Button Outline Small Size
             renderer.stem.register(ButtonOutline(size: .small, color: color))
         }
+
+        /// Button Link Standard Size
+        renderer.stem.register(ButtonLink(size: .standard))
+        /// Button Link Large Size
+        renderer.stem.register(ButtonLink(size: .large))
+        /// Button Link Small Size
+        renderer.stem.register(ButtonLink(size: .small))
+
     }
 }
 
