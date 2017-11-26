@@ -59,6 +59,32 @@ try addProvider(BootstrapProvider.Provider.self)
 }
 ```
 
+#### Row
+
+*usage:* #row(<modifier>) { }
+
+*Modifiers*:
+- align-items-start
+- align-items-center
+- align-items-end
+- justify-content-start
+- justify-content-center
+- justify-content-end
+- justify-content-around
+- justify-content-between
+- no-gutters
+- justify-content-md-center
+
+```
+#row("justify-content-md-center") {
+    #button:primary("Primary")
+}
+#row() {
+    #button:primary("Primary")
+}
+```
+
+
 ### Button
 
 ```
