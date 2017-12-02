@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://swift.org">
-        <img src="http://img.shields.io/badge/swift-3.1-brightgreen.svg" alt="Swift 3.1">
+        <img src="http://img.shields.io/badge/swift-4-brightgreen.svg" alt="Swift 4">
     </a>
     <a href="http://vapor.codes">
         <img src="https://img.shields.io/badge/Vapor-2-F6CBCA.svg"">
