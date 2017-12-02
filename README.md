@@ -14,7 +14,7 @@
 
 Vapor Provider for Bootstrap Leaf Tags.
 
-[Live Example|https://bootstrap-provider.vapor.cloud]
+[Live Example](https://bootstrap-provider.vapor.cloud)
 
 ## Installation
 
